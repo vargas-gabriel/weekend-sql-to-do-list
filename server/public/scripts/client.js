@@ -20,7 +20,8 @@ function createListItem(){
         console.log(err);
         alert('did not happen');
     })
-   
+   $('#input1').val('');
+   $('#priorityIn').val('');
 }//end creatListItem
 
 function getTasks(){

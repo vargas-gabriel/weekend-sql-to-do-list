@@ -18,9 +18,10 @@
 [] have click events send info to 
 db and append to DOM
     [x]get
-    []post
+    [x]post
     []put
     []delete
+    []clear inputs on submit button click
     []don't allow submit if input blank
 []style app
     -font family
