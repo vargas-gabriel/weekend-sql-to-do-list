@@ -1,6 +1,8 @@
 $(document).ready(onReady);
 
 function onReady() {
-console.log( 'I am ready')
+$('#submitBtn').on('click', createListItem);
 }
-console.log('js');
+function createListItem(){
+    console.log('in createListItem');
+}

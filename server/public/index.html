@@ -6,9 +6,22 @@
     <script src="vendors/jquery.js"></script>
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>To Do App</title>
 </head>
+<h1>What do I have to do today?</h1>
 <body>
+<h2>Create a list item</h2>
+<div id="toDoDiv">
+<input type="text" id="input1" placeholder="To Do">
+<label for="Priority">Prioritize:</label>
+<select name="Priority" id="priorityIn">
+    <option value="Low">Low</option>
+    <option value="Moderate">Moderate</option>
+    <option value="High">High</option>
+</select>
+<button id="submitBtn">Create</button>
+</div>
+<h3 id="toDoOut"></h3>
     
 </body>
 </html>
