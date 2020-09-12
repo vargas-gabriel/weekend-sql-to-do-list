@@ -3,13 +3,13 @@
 [x]create server
     -refer to cheat sheet to do this
 
-[]build out front end interface
+[x]build out front end interface
     - input fields
     - buttons   
-[]make sure any click events work
+[x]make sure any click events work
     -test with console logs
 
-[] create database
+[x] create database
     - weekend-to-do-app
     save it in a SQL file
 -----------------------------------
