@@ -21,7 +21,18 @@ pool.query(queryString).then((results)=>{
 
 router.post('/',(req, res)=>{
     console.log('/tasks POST hit:', req.body);
-    res.send('purr');
-    })//end POST
+    // set up query string
+    let queryString = `INSERT INTO "to do" ( "name", "priority", "complete" ) VALUES ( $1, $2, $3)`;
+    //sanitize inputs
+    //ask pool to ren query
+    pool.query(queryString, [req.body.name, req.body.priority, req.body.complete]).then((results)=>{
+        //if successful, send 201
+        res.sendStatus(201);
+    }).catch((error)=>{
+    //otherwise send 500
+        res.sendStatus(500);
+    })
+})//end POST
+
 //exports
 module.exports = router;

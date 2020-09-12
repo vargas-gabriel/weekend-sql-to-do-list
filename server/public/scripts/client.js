@@ -15,6 +15,7 @@ function createListItem(){
         //send to server via post  
         console.log('back from POST with:', response); 
         //update DOM
+        getTasks();
     }).catch(function(err){
         console.log(err);
         alert('did not happen');
