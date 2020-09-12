@@ -15,7 +15,9 @@ router.delete('/:id',(req, res)=>{
         console.log(err);
         res.sendStatus(500);
     })
-});//end delete   
+});//end delete  
+
+
 router.get('/',(req, res)=>{
 console.log('/tasks GET hit');
 //set up querystring
@@ -46,6 +48,17 @@ router.post('/',(req, res)=>{
         res.sendStatus(500);
     })
 })//end POST
+
+router.put('/:id',(req, res)=>{
+    console.log('in /task Put:', req.params );
+    //set up querystring
+    let queryString = `UPDATE "to do" SET "complete"=true WHERE id=${req.params.id}`;
+    pool.query(queryString).then((results)=>{
+        res.send(200);
+    }).catch((err)=>{
+        res.send(500);
+    })
+});//end put
 
 //exports
 module.exports = router; 

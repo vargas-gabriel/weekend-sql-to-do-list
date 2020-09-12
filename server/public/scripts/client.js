@@ -10,7 +10,7 @@ function createListItem(){
     const objectToSend = {
         name: $('#input1').val(),
         priority: $('#priorityIn').val(),
-        complete: "no"
+        complete: false
     }
     $.ajax({
         method: 'POST',
@@ -48,8 +48,7 @@ console.log('in getTasks');
                     el.append(`<li>
                     ${response[i].name} - priority:
                     ${response[i].priority}
-                    <input type="checkbox" class="completeCheck" name="complete" value="completeCheckbox" data-id = "${response[i].id}>
-                    <label for="complete>Mark Complete</label><br>
+                    <button class="completeCheck" data-id = "${response[i].id}">Complete</button>
                     <button class="deleteBtn" data-id = "${response[i].id}">Delete</button>
                     </li>`)
                 }//end for
@@ -66,6 +65,7 @@ function onReady() {
 $('#submitBtn').on('click', createListItem);
 //click handler for js created buttons
 $('#taskOut').on('click','.deleteBtn', deleteButton);
+$('#taskOut').on('click', '.completeCheck', markChecked );
 }
 function deleteButton(){
     const myId = $(this).data('id');
@@ -82,4 +82,18 @@ function deleteButton(){
         alert('unable to delete');
     })
 
+}
+function markChecked(){
+    const myId = $(this).data('id');
+    console.log('in markChecked:', myId);
+    $.ajax({
+        method: 'PUT',
+        url: '/tasks/' + myId
+    }).then(function(response){
+        console.log('back from PUT:', response);
+        getTasks();
+    }).catch(function(err) {
+        console.log(err);
+        alert('unable to PUT');
+    })//and ajax
 }

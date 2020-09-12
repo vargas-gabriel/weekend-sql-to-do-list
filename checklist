@@ -19,10 +19,12 @@
 db and append to DOM
     [x]get
     [x]post
-    []put
+    [x]put
     [x]delete
     [x]clear inputs on submit button click
     [x]don't allow submit if input blank
+-------------------------------------
+*Sunday
 []style app
     -font family
     -background color
