@@ -48,19 +48,38 @@ console.log('in getTasks');
                     el.append(`<li>
                     ${response[i].name} - priority:
                     ${response[i].priority}
-                    <input type="checkbox" id="complete" name="complete" value="completeCheckbox" data-id = "${response[i].id}>
+                    <input type="checkbox" class="completeCheck" name="complete" value="completeCheckbox" data-id = "${response[i].id}>
                     <label for="complete>Mark Complete</label><br>
-                    <button id="delete" data-id = "${response[i].id}">Delete</button>
+                    <button class="deleteBtn" data-id = "${response[i].id}">Delete</button>
                     </li>`)
                 }//end for
         }).catch(function(err){
             console.log(err);
             alert('oops')
     })//end Ajax
-
 }//end getTasks
+
+
 
 function onReady() {
     getTasks();
 $('#submitBtn').on('click', createListItem);
+//click handler for js created buttons
+$('#taskOut').on('click','.deleteBtn', deleteButton);
+}
+function deleteButton(){
+    const myId = $(this).data('id');
+    console.log('in deleteButton', myId);
+    $.ajax({
+        method: 'DELETE',
+        url: '/tasks/' + myId
+
+    }).then(function(response){
+        console.log('back from DELETE:', response);
+        getTasks();
+    }).catch(function(err) {
+        console.log(err);
+        alert('unable to delete');
+    })
+
 }

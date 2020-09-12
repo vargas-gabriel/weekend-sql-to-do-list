@@ -3,6 +3,19 @@ const express = require('express');
 const router = express.Router();
 const pool = require('./pool');
 
+router.delete('/:id',(req, res)=>{
+    console.log('in /task delete:', req.params );
+    //set up query string
+    const queryString = `DELETE FROM "to do" WHERE "id" = ${req.params.id}`;
+    //ask pool to run query
+    pool.query(queryString).then((result)=>{
+        //if successful send 200
+        res.sendStatus(200);
+    }).catch((err)=>{
+        console.log(err);
+        res.sendStatus(500);
+    })
+});//end delete   
 router.get('/',(req, res)=>{
 console.log('/tasks GET hit');
 //set up querystring
@@ -35,4 +48,4 @@ router.post('/',(req, res)=>{
 })//end POST
 
 //exports
-module.exports = router;
+module.exports = router; 
