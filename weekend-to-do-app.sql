@@ -6,3 +6,9 @@ CREATE TABLE "to do"
     "complete" VARCHAR (10)
    
 );
+INSERT INTO "to do"
+    ("name", "priority", "complete")
+VALUES
+    ('Clean bathroom', 'high', 'no'),
+    ('Work out', 'moderate', 'no');
+    
