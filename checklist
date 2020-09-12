@@ -21,7 +21,7 @@ db and append to DOM
     [x]post
     []put
     []delete
-    []clear inputs on submit button click
+    [x]clear inputs on submit button click
     []don't allow submit if input blank
 []style app
     -font family

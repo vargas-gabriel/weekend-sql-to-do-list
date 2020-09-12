@@ -2,6 +2,11 @@ $(document).ready(onReady);
 function createListItem(){
     console.log('in createListItem');
     //get user input and put into object 
+    if ($('#input1').val() === '') {
+       alert('please enter a task');
+       return false;
+    }
+    else {
     const objectToSend = {
         name: $('#input1').val(),
         priority: $('#priorityIn').val(),
@@ -20,8 +25,10 @@ function createListItem(){
         console.log(err);
         alert('did not happen');
     })
+    //clear input fields
    $('#input1').val('');
    $('#priorityIn').val('');
+    }//end else
 }//end creatListItem
 
 function getTasks(){
