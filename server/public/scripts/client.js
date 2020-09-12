@@ -15,8 +15,19 @@ console.log('in getTasks');
     url: '/tasks'
         }).then(function(response){
              console.log('back from GET with:',response);
+                //empty output el
+                let el = $('#taskOut');
+                el.empty();
                 //loop through response 
-                //append DOM with tasks
+                for (let i = 0; i < response.length; i++) {
+                    //append DOM with tasks
+                    el.append(`<li>
+                    ${response[i].name} - priority:
+                    ${response[i].priority}
+                    <button id="complete" data-id = "${response[i].id}">Complete</button> 
+                    <button id="delete" data-id = "${response[i].id}">Delete</button>
+                    </li>`)
+                }//end for
         }).catch(function(err){
             console.log(err);
             alert('oops')
