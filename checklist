@@ -1,0 +1,19 @@
+[]create server
+    -refer to cheat sheet to do this
+
+[]build out front end interface
+    - input fields
+    - buttons   
+[]make sure any click events work
+    -test with console logs
+
+[] create database
+    - weekend-to-do-app
+    save it in a SQL file
+[] have click events send info to 
+db and append to DOM
+    -get/post/put/delete
+[]style app
+    -font family
+    -background color
+    -color of tasks to show complete status
