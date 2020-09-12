@@ -17,8 +17,11 @@
 
 [] have click events send info to 
 db and append to DOM
-    -get/post/put/delete
-    -don't allow submit if input blank
+    [x]get
+    []post
+    []put
+    []delete
+    []don't allow submit if input blank
 []style app
     -font family
     -background color
