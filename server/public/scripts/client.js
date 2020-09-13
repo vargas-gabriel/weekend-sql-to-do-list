@@ -38,40 +38,41 @@ console.log('in getTasks');
     $.ajax({
     method: 'GET',
     url: '/tasks'
-        }).then(function(response){
-             console.log('back from GET with:',response);
-                //empty output el
-                let el = $('#taskOut');
-                el.empty();
-                //loop through response 
-                for (let i = 0; i < response.length; i++) {
-                    let appendString = `<li`;
-                if (response[i].complete === true ){
-                appendString += ` class=complete`;
-                }
-                appendString += `>
-                ${response[i].name} - priority:
-                ${response[i].priority}
-                <button class="completeCheck" data-id = "${response[i].id}">Complete</button>
-                <button class="deleteBtn" data-id = "${response[i].id}">Delete</button>
-                </li>`;
-                    //append DOM with tasks
-                    el.append(appendString);
-                }//end for
-        }).catch(function(err){
-            console.log(err);
-            alert('oops')
+    }).then(function(response){
+    console.log('back from GET with:',response);
+    //empty output el
+    let el = $('#taskOut');
+    el.empty();
+    //loop through response 
+        for (let i = 0; i < response.length; i++) {
+        let appendString = `<li`;
+        if (response[i].complete === true ){
+        appendString += ` class=complete`;
+        }
+        appendString += `>
+        ${response[i].name} - priority:
+        ${response[i].priority}
+        <button class="completeCheck" data-id = "${response[i].id}">Complete</button>
+        <button class="deleteBtn" data-id = "${response[i].id}">Delete</button>
+        </li>`;
+        //append DOM with tasks
+        el.append(appendString);
+        }//end for
+    }).catch(function(err){
+    console.log(err);
+    alert('oops')
     })//end Ajax
 }//end getTasks
 
 function onReady() {
     getTasks();
 $('#submitBtn').on('click', createListItem);
+$('#darkMode').on('click', toggleDarkMode);
 //click handler for js created buttons
 $('#taskOut').on('click','.deleteBtn', deleteButton);
 $('#taskOut').on('click', '.completeCheck', markChecked );
-$('#darkMode').on('click', toggleDarkMode)
 }
+
 function toggleDarkMode(){
     console.log('in toggleDarkMode');
     let webPageBody = document.body;
