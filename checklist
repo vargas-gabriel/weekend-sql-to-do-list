@@ -15,7 +15,7 @@
 -----------------------------------
 *Saturday
 
-[] have click events send info to 
+[x] have click events send info to 
 db and append to DOM
     [x]get
     [x]post
@@ -25,7 +25,7 @@ db and append to DOM
     [x]don't allow submit if input blank
 -------------------------------------
 *Sunday
-[]style app
+[x]style app
     -font family
     -background color
     -color of tasks to show complete status
