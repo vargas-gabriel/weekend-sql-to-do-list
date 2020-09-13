@@ -75,7 +75,7 @@ $('#darkMode').on('click', toggleDarkMode)
 function toggleDarkMode(){
     console.log('in toggleDarkMode');
     let webPageBody = document.body;
-    webPageBody.classList.toggle("dark-mode");
+    webPageBody.classList.toggle('dark-mode');
 }
 
 function deleteButton(){
