@@ -16,6 +16,7 @@ VALUES
     ('Routes', 'High', 'false'),
     ('Commit often', 'High', 'false'),
     ('Ajax', 'High', 'false'),
+    ('Sanitize inputs', 'High', 'false'),
     ('Style with CSS', 'High', 'false'),
     ('Relax', 'High', 'false');
     
