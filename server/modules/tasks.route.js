@@ -17,7 +17,6 @@ router.delete('/:id',(req, res)=>{
     })
 });//end delete  
 
-
 router.get('/',(req, res)=>{
 console.log('/tasks GET hit');
 //set up querystring
@@ -54,9 +53,9 @@ router.put('/:id',(req, res)=>{
     //set up querystring
     let queryString = `UPDATE "to do" SET "complete"=true WHERE id=${req.params.id}`;
     pool.query(queryString).then((results)=>{
-        res.send(200);
+        res.sendStatus(200);
     }).catch((err)=>{
-        res.send(500);
+        res.sendStatus(500);
     })
 });//end put
 

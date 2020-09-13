@@ -9,6 +9,13 @@ CREATE TABLE "to do"
 INSERT INTO "to do"
     ("name", "priority", "complete")
 VALUES
-    ('Clean bathroom', 'high', 'false'),
-    ('Work out', 'moderate', 'false');
+    ('Create checklist', 'High', 'false'),
+    ('Create server', 'High', 'false'),
+    ('Build interface', 'High', 'false'),
+    ('Clientjs logic', 'High', 'false'),
+    ('Routes', 'High', 'false'),
+    ('Commit often', 'High', 'false'),
+    ('Ajax', 'High', 'false'),
+    ('Style with CSS', 'High', 'false'),
+    ('Relax', 'High', 'false');
     
