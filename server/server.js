@@ -12,7 +12,7 @@ app.use('/tasks', tasks);
 
 // globals
 const port = process.env.PORT || 3000;
-console.log('Heroku port is:', port);
+console.log('listening on port:', port);
 
 // spin up server
 app.listen( port, ()=>{
