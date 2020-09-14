@@ -3,7 +3,7 @@ $(document).ready(onReady);
 function createListItem(){
     console.log('in createListItem');
     //get user input and put into object 
-    if ($('#input1').val() === '') {
+    if ($('#input1').val() === '' ){
        alert('please enter a task');
        return false;
     }
@@ -63,7 +63,7 @@ function getTasks(){
         alert('oops')
         })//end Ajax
     }//end getTasks
-    
+
 function onReady() {
     getTasks();
 $('#submitBtn').on('click', createListItem);
