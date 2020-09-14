@@ -1,4 +1,4 @@
-# Project Name
+## Project Name
 To Do App
 
 ## Description
@@ -13,19 +13,19 @@ Building this app was practice for full stack integration.
 * Node.js server
 * Sql database
 
-### Prerequisites 
+## Prerequisites 
 To run this app, you will need:
 * Node.js
 * Postgres
 
-#### Install
+## Install
 * Run `npm install` from the project root directory
 * Run `npm start` to run the node server
 * Open localhost 3000 in your browser
 * Create a database in postgres called `weekend-to-do-app`
 * Execute database commands from sql doc
 
-##### Usage
+## Usage
 * Create a list item using the input field and the create button
 * Click the complete button to mark the list item as complete
 * Click the delete button to remove a task from the list
