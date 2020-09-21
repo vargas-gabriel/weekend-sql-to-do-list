@@ -1,16 +1,17 @@
 .complete {
-text-decoration: line-through
+	text-decoration: line-through;
+	color: grey;
 }
 body {
-    padding: 30px;
-    background-color: #F0E772;
-    color: #E05A24;
+	padding: 30px;
+	background-color: #f0e772;
+	color: #e05a24;
 }
 .dark-mode {
-    background-color: #1C0132;
-    color: #9781A9;
+	background-color: #1c0132;
+	color: #9781a9;
 }
-.center{
-    margin: auto;
-    width: 50%;
+.center {
+	margin: auto;
+	width: 50%;
 }
